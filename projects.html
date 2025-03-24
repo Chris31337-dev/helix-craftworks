@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Projects - Helix Craftworks</title>
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="index.html">Helix Craftworks</a></h1>
+			<nav class="links">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="services.html">Services</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<nav class="main">
+				<ul>
+					<li class="search">
+						<a class="fa-search" href="#search">Search</a>
+						<form id="search" method="get" action="#">
+							<input type="text" name="query" placeholder="Search" />
+						</form>
+					</li>
+					<li class="menu">
+						<a class="fa-bars" href="#menu">Menu</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+			<article class="post">
+				<header>
+					<div class="title">
+						<h2>Our Work</h2>
+						<p>Explore our recent projects</p>
+					</div>
+				</header>
+				<p>At Helix Craftworks, we take pride in our diverse portfolio of projects. From custom furniture to intricate art installations, our work showcases our commitment to quality and creativity.</p>
+				<ul class="posts">
+					<li>
+						<article>
+							<header>
+								<h3><a href="single.html">Project One</a></h3>
+								<time class="published" datetime="2025-03-15">March 15, 2025</time>
+							</header>
+							<a href="single.html" class="image"><img src="images/pic08.jpg" alt="Project One" /></a>
+						</article>
+					</li>
+					<li>
+						<article>
+							<header>
+								<h3><a href="single.html">Project Two</a></h3>
+								<time class="published" datetime="2025-03-12">March 12, 2025</time>
+							</header>
+							<a href="single.html" class="image"><img src="images/pic09.jpg" alt="Project Two" /></a>
+						</article>
+					</li>
+				</ul>
+			</article>
+		</div>
+
+		<!-- Footer -->
+		<section id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+				<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<p class="copyright">&copy; <span id="year"></span> Helix Craftworks</p>
+		</section>
+
+	</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+	document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
