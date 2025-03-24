@@ -1,0 +1,26 @@
+{
+  "name": "helix-craftworks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint . --config eslint.config.mjs",
+    "lint:fix": "npx eslint . --fix --config eslint.config.mjs",
+    "format": "npx prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chris31337-dev/helix-craftworks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chris31337-dev/helix-craftworks/issues"
+  },
+  "homepage": "https://github.com/Chris31337-dev/helix-craftworks#readme",
+  "description": "Helix Craftworks website",
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
+}
