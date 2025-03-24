@@ -6,6 +6,7 @@
 @import 'libs/html-grid';
 @import 'fontawesome-all.min.css';
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900');
+@import url('https://use.typekit.net/hfp4qsm.css'); // Added Typekit stylesheet link
 
 /*
 	Future Imperfect by HTML5 UP
@@ -28,6 +29,20 @@
 	@import 'base/reset';
 	@import 'base/page';
 	@import 'base/typography';
+
+// Fonts.
+
+	body {
+		font-family: 'Poppins', sans-serif; // Set Poppins for all other content
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Economica', sans-serif; // Set Economica for headers
+	}
+
+	.title, .subtitle {
+		font-family: 'Filicudi Solid', sans-serif; // Set Filicudi Solid for titles and subtitles
+	}
 
 // Component.
 
