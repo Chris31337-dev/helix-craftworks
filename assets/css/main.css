@@ -1,5 +1,6 @@
-@import url(fontawesome-all.min.css);
+@import url('fontawesome-all.min.css');
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
+@import url('https://use.typekit.net/hfp4qsm.css'); // Added Typekit stylesheet link
 
 /*
 	Future Imperfect by HTML5 UP
@@ -117,7 +118,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #646464;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: 'Poppins', sans-serif; /* Updated to match main.scss */
 		font-size: 14pt;
 		font-weight: 400;
 		line-height: 1.75;
@@ -204,7 +205,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #3c3b3b;
-		font-family: "Raleway", Helvetica, sans-serif;
+		font-family: 'Economica', sans-serif; /* Updated to match main.scss */
 		font-weight: 800;
 		letter-spacing: 0.25em;
 		line-height: 1.65;

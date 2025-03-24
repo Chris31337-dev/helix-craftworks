@@ -13,7 +13,7 @@
 		<!-- Header -->
 		<header id="header">
 			<h1><a href="index.html">Helix Craftworks</a></h1>
-			<nav class="links">
+			<nav class="links" aria-label="Main navigation">
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
@@ -22,7 +22,7 @@
 					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</nav>
-			<nav class="main">
+			<nav class="main" aria-label="Secondary navigation">
 				<ul>
 					<li class="search">
 						<a class="fa-search" href="#search">Search</a>
@@ -43,27 +43,57 @@
 				<header>
 					<div class="title">
 						<h2>Contact</h2>
-						<p>Get in touch with us</p>
+						<p>Choose the type of inquiry and fill out the form below.</p>
 					</div>
 				</header>
-				<p>If you have any questions or would like to discuss a project, please feel free to contact us using the form below.</p>
-				<form method="post" action="#">
+				<div class="form-selection">
+					<button id="generalContactBtn">General Contact</button>
+					<button id="projectEstimateBtn">Request a Free Project Estimate</button>
+				</div>
+				<form id="generalContactForm" class="contact-form" method="post" action="mailto:contactus@helixcraftworks.com" style="display:none;">
 					<div class="fields">
 						<div class="field half">
 							<label for="name">Name</label>
-							<input type="text" name="name" id="name" />
+							<input type="text" name="name" id="name" required>
 						</div>
 						<div class="field half">
 							<label for="email">Email</label>
-							<input type="email" name="email" id="email" />
+							<input type="email" name="email" id="email" required>
 						</div>
 						<div class="field">
 							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="6"></textarea>
+							<textarea name="message" id="message" rows="6" required></textarea>
 						</div>
 					</div>
 					<ul class="actions">
-						<li><input type="submit" value="Send Message" class="button primary" /></li>
+						<li><input type="submit" value="Send Message" class="button primary"></li>
+					</ul>
+				</form>
+				<form id="projectEstimateForm" class="contact-form" method="post" action="mailto:contactus@helixcraftworks.com" style="display:none;">
+					<div class="fields">
+						<div class="field half">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" required>
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input type="email" name="email" id="email" required>
+						</div>
+						<div class="field half">
+							<label for="phone">Phone</label>
+							<input type="tel" name="phone" id="phone">
+						</div>
+						<div class="field half">
+							<label for="projectType">Project Type</label>
+							<input type="text" name="projectType" id="projectType" required>
+						</div>
+						<div class="field">
+							<label for="projectDetails">Project Details</label>
+							<textarea name="projectDetails" id="projectDetails" rows="6" required></textarea>
+						</div>
+					</div>
+					<ul class="actions">
+						<li><input type="submit" value="Request Estimate" class="button primary"></li>
 					</ul>
 				</form>
 			</article>
@@ -91,6 +121,16 @@
 <script src="assets/js/main.js"></script>
 <script>
 	document.getElementById('year').textContent = new Date().getFullYear();
+
+	document.getElementById('generalContactBtn').addEventListener('click', function() {
+		document.getElementById('generalContactForm').style.display = 'block';
+		document.getElementById('projectEstimateForm').style.display = 'none';
+	});
+
+	document.getElementById('projectEstimateBtn').addEventListener('click', function() {
+		document.getElementById('generalContactForm').style.display = 'none';
+		document.getElementById('projectEstimateForm').style.display = 'block';
+	});
 </script>
 </body>
 </html>
