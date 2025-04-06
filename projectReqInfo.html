@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Helix Craftworks Project Information Request Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .form-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    textarea {
+      height: 100px;
+    }
+    .checkbox-group, .radio-group {
+      margin-top: 10px;
+    }
+    .checkbox-group label, .radio-group label {
+      font-weight: normal;
+      display: block;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #222;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Helix Craftworks – Project Information Request</h1>
+    <form>
+      <h2>Customer Information</h2>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" />
+
+      <label for="address">Property Address:</label>
+      <input type="text" id="address" name="address" />
+
+      <h2>Project Overview</h2>
+      <label for="description">Brief description:</label>
+      <textarea id="description" name="description"></textarea>
+
+      <label for="propertyType">Type of property:</label>
+      <div class="checkbox-group" id="roomsAreas">
+        <label><input type="checkbox" id="propertyType" name="propertyType" value="Single-Family Home" /> Single-Family Home</label>
+        <label><input type="checkbox" name="propertyType" value="Townhouse" /> Townhouse</label>
+        <label><input type="checkbox" name="propertyType" value="Condo" /> Condo</label>
+        <label><input type="checkbox" name="propertyType" value="Rental" /> Rental/Investment</label>
+        <label><input type="checkbox" name="propertyType" value="Commercial" /> Commercial</label>
+        <label><input type="checkbox" name="propertyType" value="Other" /> Other</label>
+      </div>
+
+      <label for="renovationYes">Part of larger renovation?</label>
+      <div class="radio-group">
+        <label><input type="radio" id="renovationYes" name="renovation" value="Yes" /> Yes</label>
+        <label><input type="radio" id="renovationNo" name="renovation" value="No" /> No</label>
+      </div>
+      <label for="renovationDetails">If yes, please explain:</label>
+      <textarea id="renovationDetails" name="renovationDetails"></textarea>
+
+      <label for="startDate">Ideal start date:</label>
+      <input type="text" id="startDate" name="startDate" />
+
+      <label for="completionDate">Ideal completion date:</label>
+      <input type="text" id="completionDate" name="completionDate" />
+
+      <h2>Project Details</h2>
+      <label for="roomsAreas">Rooms/Areas involved:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="areas" value="Kitchen" /> Kitchen</label>
+        <label><input type="checkbox" name="areas" value="Bathroom" /> Bathroom</label>
+        <label><input type="checkbox" name="areas" value="Living Room" /> Living Room</label>
+        <label><input type="checkbox" name="areas" value="Bedroom" /> Bedroom</label>
+        <label><input type="checkbox" name="areas" value="Basement" /> Basement</label>
+        <label><input type="checkbox" name="areas" value="Attic" /> Attic</label>
+        <label><input type="checkbox" name="areas" value="Garage" /> Garage</label>
+        <label><input type="checkbox" name="areas" value="Outdoor" /> Outdoor/Exterior</label>
+        <label><input type="checkbox" name="areas" value="Electrical" /> Electrical Work</label>
+        <label><input type="checkbox" name="areas" value="Trim" /> Trim or Built-Ins</label>
+        <label><input type="checkbox" name="areas" value="Hidden" /> Hidden Door or Specialty Work</label>
+      </div>
+
+      <label for="services">Specific services requested:</label>
+      <textarea id="services" name="services"></textarea>
+
+      <label for="design">Design/inspiration available?</label>
+      <div class="checkbox-group" id="design">
+        <label><input type="checkbox" name="design" value="Yes" /> Yes (please attach)</label>
+        <label><input type="checkbox" name="design" value="No" /> No</label>
+        <label><input type="checkbox" name="design" value="Help" /> I’d like help with design</label>
+      </div>
+
+      <label for="materials">Material sourcing:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="materials" value="Customer" /> I’ll supply some/all materials</label>
+        <label><input type="checkbox" name="materials" value="Helix" /> I’d like Helix Craftworks to supply everything</label>
+        <label><input type="checkbox" name="materials" value="Not Sure" /> Not sure yet</label>
+      </div>
+
+      <label for="budget">Rough budget ($):</label>
+      <input type="text" id="budget" name="budget" />
+
+      <h2>Access & Logistics</h2>
+      <label for="access">Site access or parking instructions:</label>
+      <textarea id="access" name="access"></textarea>
+
+      <label for="pets">Are there pets on site?</label>
+      <div class="radio-group" id="pets">
+        <label><input type="radio" id="petsYes" name="pets" value="Yes" /> Yes</label>
+        <label><input type="radio" id="petsNo" name="pets" value="No" /> No</label>
+      </div>
+
+      <label for="petsInfo">If yes, what kind and how should we interact with them?</label>
+      <textarea id="petsInfo" name="petsInfo"></textarea>
+
+      <h2>Additional Notes</h2>
+      <label for="notes">Anything else you'd like us to know?</label>
+      <textarea id="notes" name="notes"></textarea>
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+</body>
+</html>
