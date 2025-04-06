@@ -187,15 +187,32 @@
 			</section>
 
 	</div>
-
+	<div id="underConstructionModal" class="modal">
+		<div class="modal-content">
+		  <h2>🚧 Under Construction 🚧</h2>
+		  <p>We're building something awesome here at Helix Craftworks—hang tight!</p>
+		  <p>In the meantime, feel free to <a href="contact.html">get in touch</a> or email us at <a href="mailto:info@helixcraftworks.com">info@helixcraftworks.com</a>.</p>
+		  <button class="button small" onclick="document.getElementById('underConstructionModal').style.display='none'">Enter Anyway</button>
+		</div>
+	  </div>
 <!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script>
+	<script src="assets/js/main.js">
+			window.addEventListener('load', function () {
+		  const modal = document.getElementById('underConstructionModal');
+		  if (modal) {
+			modal.style.display = 'flex';
+		  }
+		});
+	  </script>
+	
+	  
 		document.getElementById('year').textContent = new Date().getFullYear();
-	</script>
+	
+
+	
 </body>
 </html>
