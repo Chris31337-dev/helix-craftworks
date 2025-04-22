@@ -2783,6 +2783,8 @@ input, select, textarea {
 		opacity: 1;
 		padding: 4.5em;
 		width: 90em;
+		min-height: 100vh;
+	
 	}
 
 		body.is-menu-visible #wrapper {
@@ -2825,6 +2827,7 @@ input, select, textarea {
 		-ms-flex-grow: 1;
 		flex-grow: 1;
 		width: 100%;
+		flex: 1 0 auto;
 	}
 
 /* Sidebar */
@@ -2944,6 +2947,18 @@ input, select, textarea {
 
 /* Footer */
 
+	#footer {
+		width: 100%;
+		background: #fff;
+		box-shadow: 0 -2px 12px rgba(0,0,0,0.05);
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		z-index: 1000;
+		text-align: center;
+		padding: 1.5em 0 1em 0;
+	}
+
 	#footer .icons {
 		color: #aaaaaa;
 	}
@@ -2959,6 +2974,14 @@ input, select, textarea {
 
 	body.single #footer {
 		text-align: center;
+	}
+
+	@media (max-width: 980px) {
+		#footer {
+			position: static;
+			box-shadow: none;
+			padding: 1em 0 0.5em 0;
+		}
 	}
 
 /* Menu */
@@ -3096,7 +3119,6 @@ input, select, textarea {
     width: 95vw;
   }
 }
-/* ...existing code... */
 
 		@media screen and (max-width: 736px) {
 

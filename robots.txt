@@ -1,0 +1,5 @@
+# robots.txt for Helix Craftworks
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://helixcraftworks.com/sitemap.xml
