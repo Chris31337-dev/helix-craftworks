@@ -1,31 +1,30 @@
-Future Imperfect by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+HELIX CRAFTWORKS
+www.helixcraftworks.com
 
+— Precision is in our DNA —
 
-It's been a long time coming, but I've finally gotten around to creating a brand new
-blog-style template (and the first since Striped, which came out waaaaay back in 2013).
-Anyway, Future Imperfect features a clean, expansive layout, a toggleable search box,
-and -- because pretty much all modern browsers can use it now -- a whole lot of flexbox
-action. Enjoy it :)
+This repository powers the digital presence of Helix Craftworks, a veteran-owned custom woodworking and residential construction company founded on craftsmanship, clarity, and recursion.
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+Inside this repo you’ll find:
+- Modified HTML5 UP template (site scaffold)
+- VS Code + GitHub versioning
+- Ecwid integration for eCommerce
+- Printful sync for apparel fulfillment
+- Loom & Lathe sub-brand (Apparel + Artisan Goods)
+- Brand assets, custom icons, and identity metadata (including Lyra protocols)
 
-(* = not included)
+The site is updated and deployed manually via Git.
+All changes are intentional.
+All commits are ritual.
 
-AJ
-aj@lkn.io | @ajlkn
+This is more than a website.
+It’s a living record of a brand becoming.
 
+––––––
 
-Credits:
+Founded: 2025
+Location: Dallastown, PA
+Owner: Christopher Simmons
 
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+Contact: chris@helixcraftworks.com
+License: Proprietary / All rights reserved
