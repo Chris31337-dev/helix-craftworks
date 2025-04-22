@@ -3053,7 +3053,50 @@ input, select, textarea {
 			visibility: visible;
 		}
 /* Modal for Under Construction */
-
+#underConstructionModal.modal {
+  display: none; /* Hidden by default, shown with JS */
+  position: fixed;
+  z-index: 10010;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(44,44,44,0.75);
+  justify-content: center;
+  align-items: center;
+}
+#underConstructionModal .modal-content {
+  background: #fff;
+  margin: auto;
+  padding: 2em 2.5em;
+  border-radius: 8px;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.25);
+  max-width: 90vw;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+#underConstructionModal h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+#underConstructionModal button {
+  margin-top: 1em;
+}
+#underConstructionModal label {
+  font-size: 1em;
+  font-weight: 400;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  #underConstructionModal .modal-content {
+    padding: 1em 0.5em;
+    width: 95vw;
+  }
+}
+/* ...existing code... */
 
 		@media screen and (max-width: 736px) {
 
