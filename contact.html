@@ -89,6 +89,9 @@
             <label for="message">Message*</label>
             <textarea name="message" id="message" rows="6" required></textarea>
 
+            <!-- Google reCAPTCHA v2 Checkbox -->
+            <div class="g-recaptcha" data-sitekey="6LfPSiErAAAAAKPOYVCcNVg2E_pdSyiMttlFl1QT" style="margin: 1em 0;"></div>
+
             <button type="submit" class="button special">Send Message</button>
           </form>
         </section>
@@ -100,17 +103,24 @@
     </section>
   </div>
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const form = e.target;
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (!recaptchaResponse) {
+        alert("Whoa there! Please prove you're not a robot (unless you're a really handy one).");
+        return;
+      }
       const data = {
         name: form.name.value,
         email: form.email.value,
         subject: form.subject.value,
-        message: form.message.value
+        message: form.message.value,
+        recaptcha: recaptchaResponse
       };
       try {
         const res = await fetch('https://helixcraftworks-mailhandler.onrender.com/contact', {
@@ -120,14 +130,15 @@
         });
         const result = await res.json();
         if (result.success) {
-          alert('Message sent! Thank you for contacting us.');
+          alert("Message sent! If we don't reply soon, assume we're trapped behind a secret bookcase. Thanks for reaching out!");
           form.reset();
+          grecaptcha.reset();
         } else {
-          alert('Failed to send message: ' + (result.error || 'Unknown error'));
+          alert('Yikes! Your message got lost in the sawdust: ' + (result.error || 'Our carrier pigeon must be on break.'));
         }
       } catch (err) {
         console.error('Error sending message:', err);
-        alert('Oops!  Don\'t know what happened there.  Remember we/re Precision Craftspeople, not web developers.  We/ll get some help from our development team (theyre actually just AI ) and try to get this resolved quickly. For now you can email us directly at <a href="mailto:info@helixcraftworks.com'>'info@helixcraftworks.com</a> or call us at <a href="tel:7174178577">(717) 417-8577</a>.  Thanks for your patience!');
+        alert("Well, this is awkward. Something went wrong. Try again later, or send a smoke signal!");
       }
     });
   </script>
