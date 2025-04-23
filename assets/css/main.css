@@ -1574,3 +1574,78 @@ body.single #footer {
 		}
 
 	}
+
+/* --- Responsive Header & Menu Fixes --- */
+@media screen and (max-width: 1200px) {
+  #header {
+    height: 3em;
+    line-height: 3em;
+    padding: 0.5em 0;
+  }
+  #header h1 {
+    font-size: 1.3em;
+    padding: 0 0 0 0.5em;
+  }
+  #wrapper {
+    width: 100%;
+    padding: 1.5em;
+  }
+}
+@media screen and (max-width: 900px) {
+  #header {
+    height: 2.5em;
+    line-height: 2.5em;
+    flex-direction: column;
+    padding: 0.25em 0;
+  }
+  #header h1 {
+    font-size: 1em;
+    padding: 0 0 0 0.25em;
+  }
+  #header .main ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #wrapper {
+    width: 100%;
+    padding: 0.5em;
+  }
+}
+@media screen and (max-width: 736px) {
+  #header {
+    height: auto;
+    line-height: 1.2em;
+    flex-direction: column;
+    padding: 0.25em 0;
+  }
+  #header h1 {
+    font-size: 0.9em;
+    padding: 0 0 0 0.25em;
+  }
+  #header .main ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #header .links {
+    display: block;
+    width: 100%;
+    margin: 0.5em 0;
+    border-left: none;
+    padding-left: 0;
+  }
+  #header .links ul {
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: flex-start;
+  }
+  #header .links ul li {
+    margin-left: 0;
+    padding-left: 0.5em;
+    border-left: none;
+  }
+  #wrapper {
+    width: 100%;
+    padding: 0.25em;
+  }
+}
+/* --- End Responsive Header & Menu Fixes --- */
