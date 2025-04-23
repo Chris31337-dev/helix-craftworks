@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Helix Craftworks™</title>
+<<<<<<< HEAD
 	<!-- Inline critical CSS for above-the-fold layout -->
 	<style>
 	  body { margin: 0; font-family: Arial, sans-serif; background: #f9f9f9; }
@@ -25,6 +26,9 @@
 	<!-- Defer non-critical CSS -->
 	<link rel="stylesheet" href="assets/css/main.css">
 	<noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
+=======
+	<link rel="stylesheet" href="assets/css/main.css">
+>>>>>>> parent of 60c34c1 (feat: Implement critical CSS for improved loading performance and defer non-critical resources across multiple pages)
 	<!-- SEO Meta Tags -->
 	<meta name="description" content="Helix Craftworks™ offers premium custom carpentry, remodeling, and innovative home solutions in Pennsylvania. Explore our portfolio and services." />
 	<meta name="keywords" content="Helix Craftworks, custom carpentry, remodeling, hidden doors, Pennsylvania, home improvement, woodworking, electrical, built-ins" />
@@ -192,14 +196,13 @@
 	</div>
 	-->
 <!-- Scripts -->
-	<!-- Defer non-critical JS -->
-	<script src="assets/js/jquery.min.js" defer></script>
-	<script src="assets/js/browser.min.js" defer></script>
-	<script src="assets/js/breakpoints.min.js" defer></script>
-	<script src="assets/js/util.js" defer></script>
-	<script src="assets/js/main.js" defer></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 	<script>
-		window.addEventListener('DOMContentLoaded', function () {
+		window.addEventListener('load', function () {
 		  const modal = document.getElementById('underConstructionModal');
 		  const dontShowKey = 'ucModalDismissed';
 		  if (localStorage.getItem(dontShowKey) === 'true') {
