@@ -34,7 +34,8 @@ app.post('/contact', async (req, res) => {
     });
     res.json({ success: true });
   } catch (err) {
-    res.status(500).json({ success: false, error: 'Failed to send email.' });
+    console.error('Error occurred while sending email:', err); // Log the error for debugging
+    res.status(500).json({ success: false, error: 'Failed to send email. Please try again later.' });
   }
 });
 
