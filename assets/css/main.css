@@ -1649,3 +1649,15 @@ body.single #footer {
   }
 }
 /* --- End Responsive Header & Menu Fixes --- */
+
+/* Add top padding to body to prevent content from being hidden under the fixed header */
+@media screen and (min-width: 981px) {
+  body {
+    padding-top: 3.5em;
+  }
+}
+@media screen and (max-width: 980px) {
+  body {
+    padding-top: 2.75em;
+  }
+}

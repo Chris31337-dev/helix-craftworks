@@ -1,0 +1,3 @@
+<!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
+
+This is a Node.js Express backend for handling contact form submissions and sending emails using Nodemailer. Expose a POST /contact endpoint that accepts name, email, subject, and message, and sends to info@helixcraftworks.com.

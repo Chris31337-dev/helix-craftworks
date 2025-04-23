@@ -66,12 +66,24 @@
 
         <section class="contact-form">
           <h3>Send us a note</h3>
-          <form action="mailto:info@helixcraftworks.com" method="post" enctype="text/plain">
+          <form id="contactForm">
             <label for="name">Name*</label>
             <input type="text" name="name" id="name" required>
 
             <label for="email">Email*</label>
             <input type="email" name="email" id="email" required>
+
+            <label for="subject">Subject*</label>
+            <select name="subject" id="subject" required>
+              <option value="" disabled selected>Select a subject</option>
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Project Request">Project Request</option>
+              <option value="Quote Request">Quote Request</option>
+              <option value="Collaboration">Collaboration</option>
+              <option value="Support">Support</option>
+              <option value="Feedback">Feedback</option>
+              <option value="Other">Other</option>
+            </select>
 
             <label for="message">Message*</label>
             <textarea name="message" id="message" rows="6" required></textarea>
@@ -89,6 +101,33 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        subject: form.subject.value,
+        message: form.message.value
+      };
+      try {
+        const res = await fetch('http://localhost:3001/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        if (result.success) {
+          alert('Message sent! Thank you for contacting us.');
+          form.reset();
+        } else {
+          alert('Failed to send message: ' + (result.error || 'Unknown error'));
+        }
+      } catch (err) {
+        alert('Failed to send message. Please try again later.');
+      }
+    });
   </script>
 </body>
 </html>
