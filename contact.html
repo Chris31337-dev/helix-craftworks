@@ -112,7 +112,7 @@
         message: form.message.value
       };
       try {
-        const res = await fetch('/mailhandler/contact', {
+        const res = await fetch('https://helixcraftworks-mailhandler.onrender.com/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
