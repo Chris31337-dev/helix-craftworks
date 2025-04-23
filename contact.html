@@ -112,7 +112,7 @@
         message: form.message.value
       };
       try {
-        const res = await fetch('http://localhost:3001/contact', {
+        const res = await fetch('/mailhandler/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
@@ -125,7 +125,8 @@
           alert('Failed to send message: ' + (result.error || 'Unknown error'));
         }
       } catch (err) {
-        alert('Failed to send message. Please try again later.');
+        console.error('Error sending message:', err);
+        alert('Oops!  Don\'t know what happened there.  Remember we/re Precision Craftspeople, not web developers.  We/ll get some help from our development team (theyre actually just AI ) and try to get this resolved quickly. For now you can email us directly at <a href="mailto:info@helixcraftworks.com'>'info@helixcraftworks.com</a> or call us at <a href="tel:7174178577">(717) 417-8577</a>.  Thanks for your patience!');
       }
     });
   </script>
