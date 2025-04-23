@@ -1232,7 +1232,7 @@ header p {
 	padding: 4.5em;
 	width: 90em;
 	min-height: 100vh;
-
+  padding-bottom: 5em; /* Prevents content/buttons from being hidden behind the fixed footer */
 }
 
 	body.is-menu-visible #wrapper {
@@ -1255,10 +1255,11 @@ header p {
 
 	}
 
-	@media screen and (max-width: 736px) {
+	@media screen and (max-width: 980px) {
 
 		#wrapper {
 			padding: 1.5em;
+      padding-bottom: 3em;
 		}
 
 	}
@@ -1275,6 +1276,13 @@ header p {
 	-ms-flex-grow: 1;
 	flex-grow: 1;
 	width: 100%;
+  padding-bottom: 5em; /* Prevents content/buttons from being hidden behind the fixed footer */
+}
+
+@media screen and (max-width: 980px) {
+  #main {
+    padding-bottom: 3em;
+  }
 }
 
 /* Sidebar */
