@@ -192,6 +192,7 @@
 				  Crafted with seamless trim, precision mechanics, and just a pinch of literary mischief.
 				  <br><em>Specialty: Hidden door carpentry, grain alignment, bespoke trimwork.</em>
 				</div>
+				<button class="project-card-more" onclick="toggleCardContent(this)">More...</button>
 			  </div>
 		  
 			  <div class="project-card">
@@ -202,6 +203,7 @@
 				  new electrical, and open shelving with character.
 				  <br><em>Specialty: Custom cabinetry, live-edge integration, fine electrical.</em>
 				</div>
+				<button class="project-card-more" onclick="toggleCardContent(this)">More...</button>
 			  </div>
 		  
 			  <div class="project-card">
@@ -212,6 +214,7 @@
 				  This flush-mount bookcase wall fakes you out in the best way possible.
 				  <br><em>Specialty: Magnetic latches, precision reveal work, secret closet vibes.</em>
 				</div>
+				<button class="project-card-more" onclick="toggleCardContent(this)">More...</button>
 			  </div>
 		  
 			  <div class="project-card">
@@ -222,6 +225,7 @@
 				  and historical color matching to keep the soul of the home intact.
 				  <br><em>Specialty: Custom stair fabrication, historical detailing, structural revival.</em>
 				</div>
+				<button class="project-card-more" onclick="toggleCardContent(this)">More...</button>
 			  </div>
 		  
 			  <div class="project-card">
@@ -232,6 +236,7 @@
 				  ambient lighting, and no password required.
 				  <br><em>Specialty: Electrical concealment, reclaimed woodwork, bar craftsmanship.</em>
 				</div>
+				<button class="project-card-more" onclick="toggleCardContent(this)">More...</button>
 			  </div>
 			</div>
 		  </section>
@@ -262,7 +267,8 @@
 <script>
 	function toggleCardContent(btn) {
 		var content = btn.parentElement.querySelector('.project-card-content');
-		if (content.style.display === 'none') {
+		var isHidden = window.getComputedStyle(content).display === 'none';
+		if (isHidden) {
 			content.style.display = 'block';
 			btn.textContent = 'Less...';
 		} else {

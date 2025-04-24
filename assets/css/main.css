@@ -1669,3 +1669,13 @@ body.single #footer {
     padding-top: 2.75em;
   }
 }
+
+/* Add extra bottom padding to the Projects page's main section and project-cards container so cards and buttons are never hidden behind the fixed footer */
+#projects.main, .project-cards {
+  padding-bottom: 6em; /* Ensures last card/button is always visible above the fixed footer */
+}
+@media (max-width: 900px) {
+  #projects.main, .project-cards {
+    padding-bottom: 7em;
+  }
+}
