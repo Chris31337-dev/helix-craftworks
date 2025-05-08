@@ -109,13 +109,79 @@
 
 		<!-- Main -->
 			<div id="main">
-				<div class="main-header">
-					<h2>Welcome to Helix Craftworks™</h2>
-					<p>Innovative crafting solutions that transform ideas into reality</p>
+				<!-- Banner Section -->
+				<!-- Replace the static image with a rotating banner -->
+				<div id="banner" class="image featured" style="position: relative; overflow: hidden;">
+					<img id="banner-image" src="" alt="Rotating Banner" style="width: 100%; height: auto;" />
 				</div>
-				<span class="image featured"><img src="images/custom-builtins-LQ.jpg" alt="Showcase" width="1200" height="auto" /></span>
+
+				<script>
+						// Updated JavaScript for slower rotation and bullet navigation
+						(function() {
+							const bannerImages = [
+								'images/banner/architectAwesome.png',
+								'images/banner/CraftsmanshipMeetsInnovation.png',
+								'images/banner/deck2.png',
+								'images/banner/FreeConsult.png',
+								'images/banner/meetGene.png',
+								'images/banner/precisionCraftedLiving.png',
+								'images/banner/secretBookcase.png',
+								'images/banner/TrimFBPost.png'
+							];
+
+							const bannerImageElement = document.getElementById('banner-image');
+							bannerImageElement.style.transition = 'opacity 1s ease-in-out';
+							const banner = document.getElementById('banner');
+							let currentIndex = Math.floor(Math.random() * bannerImages.length);
+
+							// Create bullet navigation
+							const bulletContainer = document.createElement('div');
+							bulletContainer.style.position = 'absolute';
+							bulletContainer.style.bottom = '10px';
+							bulletContainer.style.left = '50%';
+							bulletContainer.style.transform = 'translateX(-50%)';
+							bulletContainer.style.display = 'flex';
+							bulletContainer.style.gap = '10px';
+
+							bannerImages.forEach((_, index) => {
+								const bullet = document.createElement('div');
+								bullet.style.width = '10px';
+								bullet.style.height = '10px';
+								bullet.style.borderRadius = '50%';
+								bullet.style.backgroundColor = index === currentIndex ? 'white' : 'gray';
+								bullet.style.cursor = 'pointer';
+								bullet.addEventListener('click', () => {
+									currentIndex = index;
+									updateBannerImage();
+								});
+								bulletContainer.appendChild(bullet);
+							});
+
+							banner.appendChild(bulletContainer);
+
+							function updateBannerImage() {
+								bannerImageElement.style.opacity = '0';
+								setTimeout(() => {
+									bannerImageElement.src = bannerImages[currentIndex];
+									Array.from(bulletContainer.children).forEach((bullet, index) => {
+										bullet.style.backgroundColor = index === currentIndex ? 'white' : 'gray';
+									});
+									bannerImageElement.style.opacity = '1';
+								}, 1000); // Match the transition duration
+							}
+
+							// Initialize with a random image
+							updateBannerImage();
+
+							// Rotate images every 10 seconds
+							setInterval(() => {
+								currentIndex = (currentIndex + 1) % bannerImages.length;
+								updateBannerImage();
+							}, 10000);
+						})();
+				</script>
 				<p>At Helix Craftworks™, we don’t just build things.</p>
-				<p>We craft hidden doors, bold statements, and spaces that make your guests say, “Wait—was that always there?”</p>
+				<p>We craft bold statements, and spaces that make your guests say, “Wait—was that always there?”</p>
 				<p>Rooted in tradition, refined by modern design, and finished with a knowing smirk—we bring custom woodworking and remodeling projects to life with precision, personality, and just a hint of “damn, that’s cool.”</p>
 				<p>Explore our portfolio.</p>
 				<p>Or better yet—give us something impossible.</p>
