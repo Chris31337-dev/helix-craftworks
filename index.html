@@ -194,8 +194,8 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
 										banner.appendChild(bannerLink);
 									} else {
 										// Remove the link wrapper if no link exists
-										if (bannerImageElement.parentElement.tagName === 'A') {
-											const parentElement = bannerImageElement.parentElement;
+										const parentElement = bannerImageElement.parentElement;
+										if (parentElement.tagName === 'A') {
 											parentElement.replaceWith(bannerImageElement);
 										}
 									}
