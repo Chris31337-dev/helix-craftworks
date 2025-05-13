@@ -51,6 +51,15 @@
       gtag('js', new Date());
       gtag('config', 'G-VL6DNHTZYT');
     </script>
+    <script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.enterprise.ready(async () => {
+          await grecaptcha.enterprise.execute('6LfedDcrAAAAAJ9rpcZESAN-y86aRudMl_cIGkS1', {action: 'LOGIN'});
+          // Token is generated and can be used for server-side verification
+        });
+      }
+    </script>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNQFHGKN"
