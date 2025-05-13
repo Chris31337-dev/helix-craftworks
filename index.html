@@ -185,8 +185,9 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
 										bannerLink.style.height = '100%';
 
 										// Remove any existing link wrapper
-										if (bannerImageElement.parentElement.tagName === 'A') {
-											bannerImageElement.parentElement.replaceWith(bannerImageElement);
+										const parentElement = bannerImageElement.parentElement;
+										if (parentElement.tagName === 'A') {
+											parentElement.replaceWith(bannerImageElement);
 										}
 
 										bannerLink.appendChild(bannerImageElement);
