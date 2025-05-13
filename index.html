@@ -129,14 +129,14 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
 						// Updated JavaScript for slower rotation and bullet navigation
 						(function() {
 							const bannerImages = [
-								'images/banner/architectAwesome.png',
-								'images/banner/CraftsmanshipMeetsInnovation.png',
-								'images/banner/deck2.png',
-								'images/banner/FreeConsult.png',
-								'images/banner/meetGene.png',
-								'images/banner/precisionCraftedLiving.png',
-								'images/banner/secretBookcase.png',
-								'images/banner/TrimFBPost.png'
+								{ src: 'images/banner/architectAwesome.png', link: null },
+								{ src: 'images/banner/CraftsmanshipMeetsInnovation.png', link: null },
+								{ src: 'images/banner/deck2.png', link: null },
+								{ src: 'images/banner/FreeConsult.png', link: 'https://docs.google.com/forms/d/e/1FAIpQLSc168AHpbr04R5h5crk7gxN8PiefhOScm9tPInZeVWLNcXkjw/viewform' },
+								{ src: 'images/banner/meetGene.png', link: null },
+								{ src: 'images/banner/precisionCraftedLiving.png', link: null },
+								{ src: 'images/banner/secretBookcase.png', link: null },
+								{ src: 'images/banner/TrimFBPost.png', link: null }
 							];
 
 							const bannerImageElement = document.getElementById('banner-image');
@@ -172,22 +172,48 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
 							function updateBannerImage() {
 								bannerImageElement.style.opacity = '0';
 								setTimeout(() => {
-									bannerImageElement.src = bannerImages[currentIndex];
+									const currentImage = bannerImages[currentIndex];
+									bannerImageElement.src = currentImage.src;
+
+									// Wrap the image in a link if a link exists
+									if (currentImage.link) {
+										const bannerLink = document.createElement('a');
+										bannerLink.href = currentImage.link;
+										bannerLink.target = '_blank';
+										bannerLink.style.display = 'block';
+										bannerLink.style.width = '100%';
+										bannerLink.style.height = '100%';
+
+										// Remove any existing link wrapper
+										if (bannerImageElement.parentElement.tagName === 'A') {
+											bannerImageElement.parentElement.replaceWith(bannerImageElement);
+										}
+
+										bannerLink.appendChild(bannerImageElement);
+										banner.appendChild(bannerLink);
+									} else {
+										// Remove the link wrapper if no link exists
+										if (bannerImageElement.parentElement.tagName === 'A') {
+											const parentElement = bannerImageElement.parentElement;
+											parentElement.replaceWith(bannerImageElement);
+										}
+									}
+
 									Array.from(bulletContainer.children).forEach((bullet, index) => {
 										bullet.style.backgroundColor = index === currentIndex ? 'white' : 'gray';
 									});
 									bannerImageElement.style.opacity = '1';
 								}, 1000); // Match the transition duration
-							}
+								}
 
-							// Initialize with a random image
-							updateBannerImage();
-
-							// Rotate images every 10 seconds
-							setInterval(() => {
-								currentIndex = (currentIndex + 1) % bannerImages.length;
+								// Initialize with a random image
 								updateBannerImage();
-							}, 10000);
+
+								// Rotate images every 10 seconds
+								setInterval(() => {
+									currentIndex = (currentIndex + 1) % bannerImages.length;
+									updateBannerImage();
+								}, 10000);
 						})();
 				</script>
 				<p>At Helix Craftworks™, we don’t just build things.</p>
