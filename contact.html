@@ -61,7 +61,7 @@
     At Helix Craftworks, we believe every project tells a story. Whether you’re looking for innovative designs or precision craftsmanship, we’re here to bring your vision to life. Share your ideas with us, and let’s create something remarkable.
   </p>
 
-  <form action="YOUR_FORM_HANDLER_URL" method="POST" enctype="multipart/form-data" aria-label="Contact Form">
+  <form action="https://secure.helixcraftworks.com/contact-handler" method="POST" enctype="multipart/form-data" aria-label="Contact Form">
     <label for="name" style="display: block; margin-top: 1rem;">Full Name* <span class="sr-only">(required)</span></label>
     <input type="text" id="name" name="name" required 
            style="width: 100%; padding: 0.5rem; margin-top: 0.25rem; border: 1px solid #ccc; border-radius: 6px;" 
@@ -108,7 +108,7 @@
 					<button id="generalContactBtn">I'm not sure what I want yet but let's brainstorm</button>
 					<button id="projectEstimateBtn">Request a Free Project Estimate</button>
 				</div>
-				<form id="generalContactForm" class="contact-form" method="post" action="mailto:contactus@helixcraftworks.com" style="display:none;">
+				<form id="generalContactForm" class="contact-form" method="post" action="https://secure.helixcraftworks.com/contact-handler" style="display:none;">
 					<div class="fields">
 						<div class="field half">
 							<label for="name">Name</label>
@@ -127,7 +127,7 @@
 						<li><input type="submit" value="Send Message" class="button primary"></li>
 					</ul>
 				</form>
-				<form id="projectEstimateForm" class="contact-form" method="post" action="mailto:contactus@helixcraftworks.com" style="display:none;">
+				<form id="projectEstimateForm" class="contact-form" method="post" action="https://secure.helixcraftworks.com/contact-handler" style="display:none;">
 					<div class="fields">
 						<div class="field half">
 							<label for="name">Name</label>
@@ -170,6 +170,7 @@
 				<!-- CAPTCHA Integration -->
 				<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 				<div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY" style="margin-top: 1rem;"></div>
+				<div class="g-recaptcha" data-sitekey="6LfedDcrAAAAACHMiShXSpSA-aytlBvut7hyQGsh" style="margin-top: 1rem;"></div>
 
 				<!-- Success Message -->
 				<script>
