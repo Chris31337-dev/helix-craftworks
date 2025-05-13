@@ -174,9 +174,31 @@
 
 				<!-- Success Message -->
 				<script>
-					document.querySelector('form').addEventListener('submit', function(event) {
+					async function handleFormSubmission(event) {
 						event.preventDefault();
-						alert('Thank you for your inquiry! We will get back to you shortly.');
+
+						grecaptcha.enterprise.ready(async () => {
+							const token = await grecaptcha.enterprise.execute('6LfedDcrAAAAACHMiShXSpSA-aytlBvut7hyQGsh', { action: 'submit' });
+
+							const response = await fetch('/validate-recaptcha', {
+								method: 'POST',
+								headers: { 'Content-Type': 'application/json' },
+								body: JSON.stringify({ token, action: 'submit' })
+							});
+
+							const result = await response.json();
+
+							if (result.success && result.score > 0.5) {
+								alert('Thank you for your inquiry! We will get back to you shortly.');
+								event.target.submit();
+							} else {
+								alert('reCAPTCHA validation failed. Please try again.');
+							}
+						});
+					}
+
+					document.querySelectorAll('form').forEach(form => {
+						form.addEventListener('submit', handleFormSubmission);
 					});
 
 					function onClick(e) {
