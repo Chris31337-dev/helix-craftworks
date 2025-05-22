@@ -22,5 +22,11 @@
   "description": "Helix Craftworks website",
   "devDependencies": {
     "prettier": "^3.5.3"
+  },
+  "dependencies": {
+    "@types/react": "^19.1.5",
+    "@types/react-router-dom": "^5.3.3",
+    "react": "^19.1.0",
+    "react-router-dom": "^7.6.0"
   }
 }
